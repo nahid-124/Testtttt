@@ -6,45 +6,27 @@
 <title>Medical Mechanism Visualizer</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   :root {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f5f5f4;
-    --bg-tertiary: #eeece8;
-    --bg-info: #e6f1fb;
-    --bg-danger: #fcebeb;
-    --text-primary: #1a1a18;
-    --text-secondary: #6b6b67;
-    --text-info: #185fa5;
-    --text-danger: #a32d2d;
-    --border-tertiary: rgba(0,0,0,0.12);
-    --border-secondary: rgba(0,0,0,0.2);
-    --border-primary: rgba(0,0,0,0.35);
-    --border-danger: rgba(163,45,45,0.3);
-    --radius-md: 8px;
-    --radius-lg: 12px;
+    --bg-primary: #ffffff; --bg-secondary: #f5f5f4; --bg-tertiary: #eeece8;
+    --bg-info: #e6f1fb; --bg-danger: #fcebeb;
+    --text-primary: #1a1a18; --text-secondary: #6b6b67;
+    --text-info: #185fa5; --text-danger: #a32d2d;
+    --border-tertiary: rgba(0,0,0,0.12); --border-secondary: rgba(0,0,0,0.2);
+    --border-primary: rgba(0,0,0,0.35); --border-danger: rgba(163,45,45,0.3);
+    --radius-md: 8px; --radius-lg: 12px;
     --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-mono: 'SF Mono', 'Fira Code', monospace;
   }
-
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg-primary: #1c1c1a;
-      --bg-secondary: #252523;
-      --bg-tertiary: #2e2e2b;
-      --bg-info: #042c53;
-      --bg-danger: #501313;
-      --text-primary: #f0ede8;
-      --text-secondary: #9b9b95;
-      --text-info: #85b7eb;
-      --text-danger: #f09595;
-      --border-tertiary: rgba(255,255,255,0.1);
-      --border-secondary: rgba(255,255,255,0.18);
-      --border-primary: rgba(255,255,255,0.3);
-      --border-danger: rgba(240,149,149,0.3);
+      --bg-primary: #1c1c1a; --bg-secondary: #252523; --bg-tertiary: #2e2e2b;
+      --bg-info: #042c53; --bg-danger: #501313;
+      --text-primary: #f0ede8; --text-secondary: #9b9b95;
+      --text-info: #85b7eb; --text-danger: #f09595;
+      --border-tertiary: rgba(255,255,255,0.1); --border-secondary: rgba(255,255,255,0.18);
+      --border-primary: rgba(255,255,255,0.3); --border-danger: rgba(240,149,149,0.3);
     }
   }
-
   body { font-family: var(--font); background: var(--bg-tertiary); color: var(--text-primary); min-height: 100vh; padding: 2rem 1rem; }
   .app { max-width: 720px; margin: 0 auto; }
   .header { margin-bottom: 2rem; }
@@ -73,8 +55,9 @@
   .block-header { padding: 10px 14px; background: var(--bg-secondary); border-bottom: 0.5px solid var(--border-tertiary); display: flex; align-items: center; justify-content: space-between; }
   .block-title { font-size: 12px; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
   .copy-btn { font-size: 12px; font-family: var(--font); color: var(--text-secondary); background: none; border: 0.5px solid var(--border-tertiary); border-radius: 4px; padding: 3px 10px; cursor: pointer; }
+  .copy-btn:hover { background: var(--bg-tertiary); color: var(--text-primary); }
   .block-content { padding: 14px; }
-  .meta-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-bottom: 14px; }
+  .meta-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px; margin-bottom: 14px; }
   .meta-item { background: var(--bg-secondary); border-radius: var(--radius-md); padding: 8px 10px; }
   .meta-label { font-size: 11px; color: var(--text-secondary); margin-bottom: 2px; }
   .meta-value { font-size: 13px; font-weight: 500; color: var(--text-primary); }
@@ -189,17 +172,17 @@ async function generate() {
 }
 
 function renderOutput(d) {
-  document.getElementById('metaGrid').innerHTML = [['Country / market', d.country],['Age range', d.age],['Gender', d.gender],['Core desire / fear', d.desire]].map(([l,v]) => `<div class="meta-item"><div class="meta-label">${l}</div><div class="meta-value">${v||'—'}</div></div>`).join('');
-  document.getElementById('imageIdea').textContent = d.image_idea || '—';
-  document.getElementById('imagePrompt').textContent = d.image_prompt || '—';
-  document.getElementById('videoPrompt').textContent = d.video_prompt || '—';
+  document.getElementById('metaGrid').innerHTML = [['Country / market',d.country],['Age range',d.age],['Gender',d.gender],['Core desire / fear',d.desire]].map(([l,v])=>`<div class="meta-item"><div class="meta-label">${l}</div><div class="meta-value">${v||'—'}</div></div>`).join('');
+  document.getElementById('imageIdea').textContent = d.image_idea||'—';
+  document.getElementById('imagePrompt').textContent = d.image_prompt||'—';
+  document.getElementById('videoPrompt').textContent = d.video_prompt||'—';
   document.getElementById('outputSection').classList.add('visible');
 }
 
-function copyText(id, btn) { navigator.clipboard.writeText(document.getElementById(id).textContent).then(() => { btn.textContent = 'Copied'; setTimeout(() => btn.textContent = 'Copy', 2000); }); }
-function setLoading(on, msg) { document.getElementById('statusBar').classList.toggle('visible', on); document.getElementById('statusText').textContent = msg||''; document.getElementById('generateBtn').disabled = on; }
-function showError(msg) { const b = document.getElementById('errorBox'); b.textContent = msg; b.classList.add('visible'); }
-function hideError() { document.getElementById('errorBox').classList.remove('visible'); }
+function copyText(id,btn){navigator.clipboard.writeText(document.getElementById(id).textContent).then(()=>{btn.textContent='Copied';setTimeout(()=>btn.textContent='Copy',2000);});}
+function setLoading(on,msg){document.getElementById('statusBar').classList.toggle('visible',on);document.getElementById('statusText').textContent=msg||'';document.getElementById('generateBtn').disabled=on;}
+function showError(msg){const b=document.getElementById('errorBox');b.textContent=msg;b.classList.add('visible');}
+function hideError(){document.getElementById('errorBox').classList.remove('visible');}
 </script>
 </body>
 </html>
