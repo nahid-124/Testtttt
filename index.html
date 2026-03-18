@@ -45,225 +45,52 @@
     }
   }
 
-  body {
-    font-family: var(--font);
-    background: var(--bg-tertiary);
-    color: var(--text-primary);
-    min-height: 100vh;
-    padding: 2rem 1rem;
-  }
-
+  body { font-family: var(--font); background: var(--bg-tertiary); color: var(--text-primary); min-height: 100vh; padding: 2rem 1rem; }
   .app { max-width: 720px; margin: 0 auto; }
-
   .header { margin-bottom: 2rem; }
   .header h1 { font-size: 20px; font-weight: 500; letter-spacing: -0.3px; }
   .header p { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
-
-  .input-card {
-    background: var(--bg-primary);
-    border: 0.5px solid var(--border-secondary);
-    border-radius: var(--radius-lg);
-    padding: 1.25rem;
-    margin-bottom: 1rem;
-  }
-
+  .input-card { background: var(--bg-primary); border: 0.5px solid var(--border-secondary); border-radius: var(--radius-lg); padding: 1.25rem; margin-bottom: 1rem; }
   .field { margin-bottom: 1rem; }
   .field:last-child { margin-bottom: 0; }
-
-  label {
-    display: block;
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 6px;
-  }
-
+  label { display: block; font-size: 12px; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
   .field-row { display: flex; gap: 8px; align-items: flex-start; }
-
-  .tag {
-    font-size: 11px;
-    font-weight: 500;
-    padding: 3px 8px;
-    border-radius: 4px;
-    white-space: nowrap;
-    margin-top: 10px;
-    flex-shrink: 0;
-  }
+  .tag { font-size: 11px; font-weight: 500; padding: 3px 8px; border-radius: 4px; white-space: nowrap; margin-top: 10px; flex-shrink: 0; }
   .tag-required { background: var(--bg-danger); color: var(--text-danger); }
   .tag-optional { background: var(--bg-secondary); color: var(--text-secondary); }
-
-  textarea, input[type="text"] {
-    width: 100%;
-    font-family: var(--font);
-    font-size: 14px;
-    color: var(--text-primary);
-    background: var(--bg-secondary);
-    border: 0.5px solid var(--border-tertiary);
-    border-radius: var(--radius-md);
-    padding: 10px 12px;
-    resize: vertical;
-    outline: none;
-    transition: border-color 0.15s, background 0.15s;
-  }
-  textarea:focus, input[type="text"]:focus {
-    border-color: var(--border-primary);
-    background: var(--bg-primary);
-  }
+  textarea, input[type="text"] { width: 100%; font-family: var(--font); font-size: 14px; color: var(--text-primary); background: var(--bg-secondary); border: 0.5px solid var(--border-tertiary); border-radius: var(--radius-md); padding: 10px 12px; resize: vertical; outline: none; }
   textarea { min-height: 72px; line-height: 1.5; }
-
-  .btn-generate {
-    width: 100%;
-    padding: 12px;
-    font-size: 15px;
-    font-weight: 500;
-    font-family: var(--font);
-    color: var(--text-primary);
-    background: var(--bg-primary);
-    border: 0.5px solid var(--border-secondary);
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    transition: background 0.15s, transform 0.1s;
-    margin-bottom: 1.5rem;
-  }
+  .btn-generate { width: 100%; padding: 12px; font-size: 15px; font-weight: 500; font-family: var(--font); color: var(--text-primary); background: var(--bg-primary); border: 0.5px solid var(--border-secondary); border-radius: var(--radius-md); cursor: pointer; margin-bottom: 1.5rem; }
   .btn-generate:hover { background: var(--bg-secondary); }
-  .btn-generate:active { transform: scale(0.99); }
   .btn-generate:disabled { opacity: 0.5; cursor: not-allowed; }
-
-  .status-bar {
-    display: none;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-  }
+  .status-bar { display: none; align-items: center; gap: 8px; font-size: 13px; color: var(--text-secondary); margin-bottom: 1rem; }
   .status-bar.visible { display: flex; }
-
-  .spinner {
-    width: 14px; height: 14px;
-    border: 1.5px solid var(--border-secondary);
-    border-top-color: var(--text-primary);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    flex-shrink: 0;
-  }
+  .spinner { width: 14px; height: 14px; border: 1.5px solid var(--border-secondary); border-top-color: var(--text-primary); border-radius: 50%; animation: spin 0.8s linear infinite; flex-shrink: 0; }
   @keyframes spin { to { transform: rotate(360deg); } }
-
   .output-section { display: none; }
   .output-section.visible { display: block; }
-
-  .output-block {
-    background: var(--bg-primary);
-    border: 0.5px solid var(--border-tertiary);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    margin-bottom: 1rem;
-  }
-
-  .block-header {
-    padding: 10px 14px;
-    background: var(--bg-secondary);
-    border-bottom: 0.5px solid var(--border-tertiary);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .block-title {
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .copy-btn {
-    font-size: 12px;
-    font-family: var(--font);
-    color: var(--text-secondary);
-    background: none;
-    border: 0.5px solid var(--border-tertiary);
-    border-radius: 4px;
-    padding: 3px 10px;
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-  .copy-btn:hover { background: var(--bg-tertiary); color: var(--text-primary); }
-
+  .output-block { background: var(--bg-primary); border: 0.5px solid var(--border-tertiary); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1rem; }
+  .block-header { padding: 10px 14px; background: var(--bg-secondary); border-bottom: 0.5px solid var(--border-tertiary); display: flex; align-items: center; justify-content: space-between; }
+  .block-title { font-size: 12px; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
+  .copy-btn { font-size: 12px; font-family: var(--font); color: var(--text-secondary); background: none; border: 0.5px solid var(--border-tertiary); border-radius: 4px; padding: 3px 10px; cursor: pointer; }
   .block-content { padding: 14px; }
-
-  .meta-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
-    margin-bottom: 14px;
-  }
-
-  .meta-item {
-    background: var(--bg-secondary);
-    border-radius: var(--radius-md);
-    padding: 8px 10px;
-  }
+  .meta-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-bottom: 14px; }
+  .meta-item { background: var(--bg-secondary); border-radius: var(--radius-md); padding: 8px 10px; }
   .meta-label { font-size: 11px; color: var(--text-secondary); margin-bottom: 2px; }
   .meta-value { font-size: 13px; font-weight: 500; color: var(--text-primary); }
-
-  .idea-box {
-    background: var(--bg-info);
-    border-radius: var(--radius-md);
-    padding: 10px 12px;
-    font-size: 13px;
-    color: var(--text-info);
-    line-height: 1.5;
-    margin-bottom: 14px;
-  }
-
-  .prompt-label {
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-    margin-bottom: 6px;
-    margin-top: 12px;
-  }
-  .prompt-label:first-of-type { margin-top: 0; }
-
-  .prompt-box {
-    background: var(--bg-secondary);
-    border-radius: var(--radius-md);
-    padding: 12px;
-    font-size: 13px;
-    line-height: 1.6;
-    color: var(--text-primary);
-    white-space: pre-wrap;
-  }
-
-  .error-box {
-    display: none;
-    background: var(--bg-danger);
-    border: 0.5px solid var(--border-danger);
-    border-radius: var(--radius-md);
-    padding: 10px 12px;
-    font-size: 13px;
-    color: var(--text-danger);
-    margin-bottom: 1rem;
-    font-family: var(--font-mono);
-    white-space: pre-wrap;
-    word-break: break-all;
-  }
+  .idea-box { background: var(--bg-info); border-radius: var(--radius-md); padding: 10px 12px; font-size: 13px; color: var(--text-info); line-height: 1.5; margin-bottom: 14px; }
+  .prompt-label { font-size: 11px; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 6px; margin-top: 12px; }
+  .prompt-box { background: var(--bg-secondary); border-radius: var(--radius-md); padding: 12px; font-size: 13px; line-height: 1.6; color: var(--text-primary); white-space: pre-wrap; }
+  .error-box { display: none; background: var(--bg-danger); border: 0.5px solid var(--border-danger); border-radius: var(--radius-md); padding: 10px 12px; font-size: 13px; color: var(--text-danger); margin-bottom: 1rem; font-family: var(--font-mono); white-space: pre-wrap; word-break: break-all; }
   .error-box.visible { display: block; }
 </style>
 </head>
 <body>
-
 <div class="app">
   <div class="header">
     <h1>Medical mechanism visualizer</h1>
     <p>Paste a script line and URL — get Nano Banana + video prompts instantly</p>
   </div>
-
   <div class="input-card">
     <div class="field">
       <div class="field-row">
@@ -293,16 +120,12 @@
       </div>
     </div>
   </div>
-
   <button class="btn-generate" id="generateBtn" onclick="generate()">Generate prompts ↗</button>
-
   <div class="status-bar" id="statusBar">
     <div class="spinner"></div>
     <span id="statusText">Thinking...</span>
   </div>
-
   <div class="error-box" id="errorBox"></div>
-
   <div class="output-section" id="outputSection">
     <div class="output-block">
       <div class="block-header"><span class="block-title">Target audience</span></div>
@@ -312,7 +135,6 @@
         <div class="idea-box" id="imageIdea"></div>
       </div>
     </div>
-
     <div class="output-block">
       <div class="block-header">
         <span class="block-title">📸 Nano Banana image prompt</span>
@@ -320,7 +142,6 @@
       </div>
       <div class="block-content"><div class="prompt-box" id="imagePrompt"></div></div>
     </div>
-
     <div class="output-block">
       <div class="block-header">
         <span class="block-title">🎬 Video direction prompt</span>
@@ -330,141 +151,55 @@
     </div>
   </div>
 </div>
-
 <script>
 const SYSTEM_PROMPT = `You are a medical creative director specializing in hyper-realistic 3D biological visualization for short-form health and supplement ads.
 
 Given a script line, website context, and an optional visual idea, return ONLY a valid JSON object — no markdown fences, no explanation, no preamble. Just raw JSON.
 
-{
-  "country": "primary target country or market",
-  "age": "age range e.g. 28-45",
-  "gender": "Male / Female / Both",
-  "desire": "core desire or fear in 6-10 words",
-  "image_idea": "one sentence visual concept",
-  "image_prompt": "prompt under 120 words single paragraph",
-  "video_prompt": "video direction under 80 words single paragraph"
-}
+{"country":"primary target country or market","age":"age range e.g. 28-45","gender":"Male / Female / Both","desire":"core desire or fear in 6-10 words","image_idea":"one sentence visual concept","image_prompt":"prompt under 120 words single paragraph","video_prompt":"video direction under 80 words single paragraph"}
 
-IMAGE PROMPT RULES:
-- Always start with: Hyper-realistic 3D medical render,
-- Extreme macro close-up, one biological subject fills 70-90% of frame
-- Cinematic depth of field, soft bokeh background
-- Warm amber/coral for blood/tissue/organs; cool blue-white for neural/cellular/sperm
-- Internal glow from within the subject
-- No text, no labels, no cartoon style
-- End with: Xavork anatomical visualization style, 9:16 vertical portrait orientation
+IMAGE PROMPT RULES: Always start with: Hyper-realistic 3D medical render, — Extreme macro close-up, one biological subject fills 70-90% of frame — Cinematic depth of field, soft bokeh — Warm amber/coral for blood/tissue; cool blue-white for neural/cellular — Internal glow — No text, no labels — End with: Xavork anatomical visualization style, 9:16 vertical portrait orientation
 
-VIDEO DIRECTION RULES:
-- Camera and biological motion only
-- slow push in, gentle orbit, cells pulsing, fluid flowing, particles drifting
-- 5-10 second seamless loop feel
-- End with: seamless loop, no camera shake`;
+VIDEO RULES: Camera and biological motion only — slow push in, cells pulsing, fluid flowing, particles drifting — End with: seamless loop, no camera shake`;
 
 async function generate() {
   const line = document.getElementById('scriptLine').value.trim();
   const url = document.getElementById('websiteUrl').value.trim();
   const idea = document.getElementById('visualIdea').value.trim();
-
   if (!line || !url) { showError('Script line and website URL are both required.'); return; }
-
   hideError();
   setLoading(true, 'Generating prompts...');
   document.getElementById('outputSection').classList.remove('visible');
-
-  const userMsg = `Script line: "${line}"
-
-Website to research: ${url}
-${idea ? '\nVisual idea from creative: ' + idea : '\nGenerate your own image idea based on the script line.'}
-
-Using your knowledge of this brand/website, identify the target audience. Then return the JSON object.`;
-
+  const userMsg = `Script line: "${line}"\nWebsite: ${url}\n${idea ? 'Visual idea: ' + idea : 'Generate your own image idea.'}`;
   try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
+    const res = await fetch('https://mmv-proxy.nahid-902.workers.dev/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-5',
-        max_tokens: 1000,
-        system: SYSTEM_PROMPT,
-        messages: [{ role: 'user', content: userMsg }]
-      })
+      body: JSON.stringify({ model: 'claude-sonnet-4-5', max_tokens: 1000, system: SYSTEM_PROMPT, messages: [{ role: 'user', content: userMsg }] })
     });
-
-    if (!res.ok) {
-      const errText = await res.text();
-      showError('API error ' + res.status + ':\n' + errText);
-      setLoading(false);
-      return;
-    }
-
+    if (!res.ok) { showError('API error ' + res.status + ':\n' + await res.text()); setLoading(false); return; }
     const data = await res.json();
-
-    if (data.error) {
-      showError('API returned error:\n' + JSON.stringify(data.error, null, 2));
-      setLoading(false);
-      return;
-    }
-
+    if (data.error) { showError('Error:\n' + JSON.stringify(data.error, null, 2)); setLoading(false); return; }
     const raw = data.content?.find(b => b.type === 'text')?.text || '';
-
-    let parsed;
-    try {
-      const clean = raw.replace(/```json|```/g, '').trim();
-      const jsonStart = clean.indexOf('{');
-      const jsonEnd = clean.lastIndexOf('}');
-      parsed = JSON.parse(clean.slice(jsonStart, jsonEnd + 1));
-    } catch(parseErr) {
-      showError('JSON parse failed.\nRaw response:\n' + raw + '\n\nParse error: ' + parseErr.message);
-      setLoading(false);
-      return;
-    }
-
+    const clean = raw.replace(/```json|```/g, '').trim();
+    const parsed = JSON.parse(clean.slice(clean.indexOf('{'), clean.lastIndexOf('}') + 1));
     renderOutput(parsed);
-  } catch(e) {
-    showError('Network or fetch error:\n' + e.message);
-  }
-
+  } catch(e) { showError('Error:\n' + e.message); }
   setLoading(false);
 }
 
 function renderOutput(d) {
-  document.getElementById('metaGrid').innerHTML = [
-    ['Country / market', d.country],
-    ['Age range', d.age],
-    ['Gender', d.gender],
-    ['Core desire / fear', d.desire]
-  ].map(([l, v]) => `<div class="meta-item"><div class="meta-label">${l}</div><div class="meta-value">${v || '—'}</div></div>`).join('');
-
+  document.getElementById('metaGrid').innerHTML = [['Country / market', d.country],['Age range', d.age],['Gender', d.gender],['Core desire / fear', d.desire]].map(([l,v]) => `<div class="meta-item"><div class="meta-label">${l}</div><div class="meta-value">${v||'—'}</div></div>`).join('');
   document.getElementById('imageIdea').textContent = d.image_idea || '—';
   document.getElementById('imagePrompt').textContent = d.image_prompt || '—';
   document.getElementById('videoPrompt').textContent = d.video_prompt || '—';
   document.getElementById('outputSection').classList.add('visible');
 }
 
-function copyText(id, btn) {
-  navigator.clipboard.writeText(document.getElementById(id).textContent).then(() => {
-    btn.textContent = 'Copied';
-    setTimeout(() => btn.textContent = 'Copy', 2000);
-  });
-}
-
-function setLoading(on, msg) {
-  document.getElementById('statusBar').classList.toggle('visible', on);
-  document.getElementById('statusText').textContent = msg || '';
-  document.getElementById('generateBtn').disabled = on;
-}
-
-function showError(msg) {
-  const box = document.getElementById('errorBox');
-  box.textContent = msg;
-  box.classList.add('visible');
-}
-
-function hideError() {
-  document.getElementById('errorBox').classList.remove('visible');
-}
+function copyText(id, btn) { navigator.clipboard.writeText(document.getElementById(id).textContent).then(() => { btn.textContent = 'Copied'; setTimeout(() => btn.textContent = 'Copy', 2000); }); }
+function setLoading(on, msg) { document.getElementById('statusBar').classList.toggle('visible', on); document.getElementById('statusText').textContent = msg||''; document.getElementById('generateBtn').disabled = on; }
+function showError(msg) { const b = document.getElementById('errorBox'); b.textContent = msg; b.classList.add('visible'); }
+function hideError() { document.getElementById('errorBox').classList.remove('visible'); }
 </script>
-
 </body>
 </html>
